@@ -16,7 +16,7 @@ export class ConsumerService {
             deadLetterExchange: 'retry_exchange',
             deadLetterRoutingKey: 'bill.retry',
         },
-    })
+    })//
     async handleMessage(msg: any, amqpMsg: ConsumeMessage) {
         const retryCount = parseInt(amqpMsg.properties.headers['x-death']?.[0]?.count || '0');
         try {
